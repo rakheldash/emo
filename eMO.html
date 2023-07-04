@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Electronic Money Order - Input Page</title>
+</head>
+<body>
+    <h1>Electronic Money Order - Input Page</h1>
+    <form>
+        <label for="date">Date:</label>
+        <input type="text" id="date" required><br><br>
+
+        <label for="poname">Name of the P.O.:</label>
+        <input type="text" id="poname" required><br><br>
+
+        <h2>Sender Details</h2>
+        <label for="senderName">Sender Name:</label>
+        <input type="text" id="senderName" required><br><br>
+
+        <label for="senderAddress1">Sender Address Line 1:</label>
+        <input type="text" id="senderAddress1" required><br><br>
+
+        <label for="senderAddress2">Sender Address Line 2:</label>
+        <input type="text" id="senderAddress2" required><br><br>
+
+        <label for="senderAddress3">Sender Address Line 3:</label>
+        <input type="text" id="senderAddress3" required><br><br>
+
+        <label for="senderDistrict">Sender District:</label>
+        <input type="text" id="senderDistrict" required><br><br>
+
+        <label for="senderState">Sender State:</label>
+        <input type="text" id="senderState" required><br><br>
+
+        <label for="senderPinCode">Sender Pin Code:</label>
+        <input type="text" id="senderPinCode" required><br><br>
+
+        <label for="senderPhone">Sender Phone:</label>
+        <input type="text" id="senderPhone" required><br><br>
+
+        <h2>Recipient Details</h2>
+        <label for="receiverName">Recipient Name:</label>
+        <input type="text" id="receiverName" required><br><br>
+
+        <label for="receiverAddress1">Recipient Address Line 1:</label>
+        <input type="text" id="receiverAddress1" required><br><br>
+
+        <label for="receiverAddress2">Recipient Address Line 2:</label>
+        <input type="text" id="receiverAddress2" required><br><br>
+
+        <label for="receiverAddress3">Recipient Address Line 3:</label>
+        <input type="text" id="receiverAddress3" required><br><br>
+
+        <label for="receiverDistrict">Recipient District:</label>
+        <input type="text" id="receiverDistrict" required><br><br>
+
+        <label for="receiverState">Recipient State:</label>
+        <input type="text" id="receiverState" required><br><br>
+
+        <label for="receiverPinCode">Recipient Pin Code:</label>
+        <input type="text" id="receiverPinCode" required><br><br>
+
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" required><br><br>
+
+        <label for="amountWords">Amount in Words:</label>
+        <input type="text" id="amountWords" required><br><br>
+
+        <label for="message">Message:</label>
+        <input type="text" id="message" required><br><br>
+
+        <input type="button" value="Submit" onclick="createMoneyOrder()">
+    </form>
+
+    <script>
+        function createMoneyOrder() {
+            var date = document.getElementById("date").value;
+            var poname = document.getElementById("poname").value;
+            var senderName = document.getElementById("senderName").value;
+            var senderAddress1 = document.getElementById("senderAddress1").value;
+            var senderAddress2 = document.getElementById("senderAddress2").value;
+            var senderAddress3 = document.getElementById("senderAddress3").value;
+            var senderDistrict = document.getElementById("senderDistrict").value;
+            var senderState = document.getElementById("senderState").value;
+            var senderPinCode = document.getElementById("senderPinCode").value;
+            var senderPhone = document.getElementById("senderPhone").value;
+            var receiverName = document.getElementById("receiverName").value;
+            var receiverAddress1 = document.getElementById("receiverAddress1").value;
+            var receiverAddress2 = document.getElementById("receiverAddress2").value;
+            var receiverAddress3 = document.getElementById("receiverAddress3").value;
+            var receiverDistrict = document.getElementById("receiverDistrict").value;
+            var receiverState = document.getElementById("receiverState").value;
+            var receiverPinCode = document.getElementById("receiverPinCode").value;
+            var amount = document.getElementById("amount").value;
+            var amountWords = document.getElementById("amountWords").value;
+            var message = document.getElementById("message").value;
+
+            var queryParams = "?date=" + encodeURIComponent(date) +
+                "&poname=" + encodeURIComponent(poname) +
+                "&senderName=" + encodeURIComponent(senderName) +
+                "&senderAddress1=" + encodeURIComponent(senderAddress1) +
+                "&senderAddress2=" + encodeURIComponent(senderAddress2) +
+                "&senderAddress3=" + encodeURIComponent(senderAddress3) +
+                "&senderDistrict=" + encodeURIComponent(senderDistrict) +
+                "&senderState=" + encodeURIComponent(senderState) +
+                "&senderPinCode=" + encodeURIComponent(senderPinCode) +
+                "&senderPhone=" + encodeURIComponent(senderPhone) +
+                "&receiverName=" + encodeURIComponent(receiverName) +
+                "&receiverAddress1=" + encodeURIComponent(receiverAddress1) +
+                "&receiverAddress2=" + encodeURIComponent(receiverAddress2) +
+                "&receiverAddress3=" + encodeURIComponent(receiverAddress3) +
+                "&receiverDistrict=" + encodeURIComponent(receiverDistrict) +
+                "&receiverState=" + encodeURIComponent(receiverState) +
+                "&receiverPinCode=" + encodeURIComponent(receiverPinCode) +
+                "&amount=" + encodeURIComponent(amount)+
+                "&amountWords=" + encodeURIComponent(amountWords)+
+                "&message=" + encodeURIComponent(message);
+
+            var formPageURL = "form.html" + queryParams;
+            window.location.href = formPageURL;
+        }
+    </script>
+</body>
+</html>

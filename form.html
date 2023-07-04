@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Electronic Money Order - Form Page</title>
+    <style>
+        p {
+            line-height:0.5; /* Adjust the line height as desired */
+        }
+        h3 {
+            line-height:0.5; /* Adjust the line height as desired */
+        }
+        .rectangle {
+            float: right;
+            width: 120px;
+            height: 60px;
+            border: 0.5px solid #000;
+            display: flex;
+            justify-content: center;
+            align-items: right;
+        }
+    </style>
+</head>
+<body>
+    <h1>.</h1>
+    <h3><center>Department of Posts</center></h3>
+
+    <script>
+        window.onload = function() {
+            var queryParams = new URLSearchParams(window.location.search);
+
+            var date = queryParams.get("date");
+            var poname = queryParams.get("poname");
+            var senderName = queryParams.get("senderName");
+            var senderAddress1 = queryParams.get("senderAddress1");
+            var senderAddress2 = queryParams.get("senderAddress2");
+            var senderAddress3 = queryParams.get("senderAddress3");
+            var senderDistrict = queryParams.get("senderDistrict");
+            var senderState = queryParams.get("senderState");
+            var senderPinCode = queryParams.get("senderPinCode");
+            var senderPhone = queryParams.get("senderPhone");
+            var receiverName = queryParams.get("receiverName");
+            var receiverAddress1 = queryParams.get("receiverAddress1");
+            var receiverAddress2 = queryParams.get("receiverAddress2");
+            var receiverAddress3 = queryParams.get("receiverAddress3");
+            var receiverDistrict = queryParams.get("receiverDistrict");
+            var receiverState = queryParams.get("receiverState");
+            var receiverPinCode = queryParams.get("receiverPinCode");
+            var amount = queryParams.get("amount");
+            var amountWords = queryParams.get("amountWords")
+            var message = queryParams.get("message")
+
+            var formContent = "<h3><center>eMO Form</center></h3>" +
+            "<p style='text-align:right;'><strong>" + date + "</strong></p>" +
+            "<p style='text-align:right;'><strong>Dated (dd/mm/yyyy)</strong></p>" +
+            "<p style='text-align:center;'><strong>(Name of Booking Post Office <u>" + poname + "</u>)</strong></p>" +
+    "<div style='display:flex; justify-content: space-between;'>" +
+    "<div style='width:45%;'>" +
+    "<p><strong>Remitter Address</strong></p>" +
+    "<p><strong>Name:</strong> <u> " + senderName + "</u></p>" +
+    "<p><strong>Address 1:</strong> <u> " + senderAddress1 + "</u></p>" +
+    "<p><strong>Address 2:</strong> <u> " + senderAddress2 + "</u></p>" +
+    "<p><strong>Address 3:</strong> <u> " + senderAddress3 + "</u></p>" +
+    "<p><strong>District:</strong> <u> " + senderDistrict + "</u></p>" +
+    "<p><strong>State:</strong> <u> " + senderState + "</u></p>" +
+    "<p><strong>PIN Code:</strong> <u> " + senderPinCode + "</u></p>" +
+    "<p><strong>Phone:</strong> <u> " + senderPhone + "</u></p>" +
+    "</div>" +
+    "<div style='width:45%;'>" +
+    "<p1><strong>I intend to pay Rs. <u>" + amount + "</u> (in figure) <u>" + amountWords + "</u> (in words) through eMO to the following payee;</strong></p1>" +
+    "<p><strong>Name:</strong> <u> " + receiverName + "</u></p>" +
+    "<p><strong>Address 1:</strong> <u> " + receiverAddress1 + "</u></p>" +
+    "<p><strong>Address 2:</strong> <u> " + receiverAddress2 + "</u></p>" +
+    "<p><strong>Address 3:</strong> <u> " + receiverAddress3 + "</u></p>" +
+    "<p><strong>District:</strong> <u> " + receiverDistrict + "</u></p>" +
+    "<p><strong>State:</strong> <u> " + receiverState + "</u></p>" +
+    "<p><strong>PIN Code:</strong> <u> " + receiverPinCode + "</u></p>" +
+    "</div>" +
+    "</div>" +
+    "<div><p><strong>Give the relevant option for Message Code: </strong><b>" + message + "</b></p>" +
+    "<p><strong>Message Code</strong></p>" +
+    "<br><p style='text-align:right;'><strong>(Name and signature of Remitter)</strong></p>" +
+    "<p><center><strong>FOR OFFICE USE ONLY</strong></center></p>" +
+    "<div style='display:flex; justify-content: space-between;'>" +
+    "<div style='width:45%;'>" +
+    "<p><strong>Amount of Remittance</strong></p>" +
+    "<p><strong>receipt)</strong></p>" +
+    "<p><strong>Commission</strong></p>" +    
+    "<p><strong>Total</strong></p><br><br>" +
+    "<p><strong>Signature of MO PA</strong></p>" +
+    "<p><strong>remittance</strong></p>" +
+    "</div>" +
+    "<div style='width:45%;'>" +
+    "<p><strong>............ (Space for pasting eMO</strong></p><br>" +
+    "<p><strong>............</strong></p><br><br><br>" +
+    "<p><strong>Authorized for</strong></p><br>" +
+    "</div>" +    
+    "</div>" +
+    "<div class=\"rectangle\">" +
+    "<h4>Oblong Stamp</h4>" +
+    "</div><br><br><br><br><br>" +
+    "<p style='text-align:right;'><strong>(Signature)</strong></p>" +
+    "<p style='text-align:right;'><strong>CPM/SPM/DPM/APM/SPM</strong></p>" +
+    "</div>";
+
+
+            document.body.innerHTML += formContent;
+        };
+    </script>
+</body>
+</html>
