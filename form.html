@@ -1,18 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Electronic Money Order - Form Page</title>
+    <title></title>
     <style>
         p {
             line-height:0.5; /* Adjust the line height as desired */
         }
+        h1 {
+            line-height:1.0; /* Adjust the line height as desired */
+            color: white;
+        }
         h3 {
             line-height:0.5; /* Adjust the line height as desired */
         }
+        .logo {
+            position: absolute;
+            top: 50px; /* Adjust the top positioning as needed */
+            left: 10px; /* Adjust the left positioning as needed */
+            width: 2.5cm;
+            height: 1.5cm;
+        }
         .rectangle {
             float: right;
-            width: 120px;
-            height: 60px;
+            width: 150px;
+            height: 80px;
             border: 0.5px solid #000;
             display: flex;
             justify-content: center;
@@ -21,9 +32,8 @@
     </style>
 </head>
 <body>
-    <h1>.</h1>
+    <h1><img class="logo" src="indiapostlogo.png" alt="Logo" class="whiteText">.</h1>
     <h3><center>Department of Posts</center></h3>
-
     <script>
         window.onload = function() {
             var queryParams = new URLSearchParams(window.location.search);
@@ -63,7 +73,7 @@
     "<p><strong>District:</strong> <u> " + senderDistrict + "</u></p>" +
     "<p><strong>State:</strong> <u> " + senderState + "</u></p>" +
     "<p><strong>PIN Code:</strong> <u> " + senderPinCode + "</u></p>" +
-    "<p><strong>Phone:</strong> <u> " + senderPhone + "</u></p>" +
+    "<p><strong>Phone:</strong> <u> " + senderPhone + "</u></p><br>" +
     "</div>" +
     "<div style='width:45%;'>" +
     "<p1><strong>I intend to pay Rs. <u>" + amount + "</u> (in figure) <u>" + amountWords + "</u> (in words) through eMO to the following payee;</strong></p1>" +
@@ -76,23 +86,22 @@
     "<p><strong>PIN Code:</strong> <u> " + receiverPinCode + "</u></p>" +
     "</div>" +
     "</div>" +
-    "<div><p><strong>Give the relevant option for Message Code: </strong><b>" + message + "</b></p>" +
+    "<p><strong>Custom Message: " + message + "</strong></p>" +
+    "<div><p><strong>Give the relevant option for Message Code: </strong></p>" +
     "<p><strong>Message Code</strong></p>" +
     "<br><p style='text-align:right;'><strong>(Name and signature of Remitter)</strong></p>" +
     "<p><center><strong>FOR OFFICE USE ONLY</strong></center></p>" +
-    "<div style='display:flex; justify-content: space-between;'>" +
-    "<div style='width:45%;'>" +
     "<p><strong>Amount of Remittance</strong></p>" +
-    "<p><strong>receipt)</strong></p>" +
+    "<div style='display:flex; justify-content: space-between;'>" +
+    "<div style='width:30%;'>" +
     "<p><strong>Commission</strong></p>" +    
     "<p><strong>Total</strong></p><br><br>" +
     "<p><strong>Signature of MO PA</strong></p>" +
-    "<p><strong>remittance</strong></p>" +
     "</div>" +
-    "<div style='width:45%;'>" +
-    "<p><strong>............ (Space for pasting eMO</strong></p><br>" +
-    "<p><strong>............</strong></p><br><br><br>" +
-    "<p><strong>Authorized for</strong></p><br>" +
+    "<div style='width:40%;'>" +
+    "<p><strong>............ (Space for pasting eMO receipt)</strong></p>" +
+    "<p><strong>............</strong></p><br><br>" +
+    "<p><strong>Authorized for remittance</strong></p><br>" +
     "</div>" +    
     "</div>" +
     "<div class=\"rectangle\">" +
